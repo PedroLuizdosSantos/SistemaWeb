@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ {% include 'navbar.html' %}
+   <div class="container mt-4">
+   <h2> Minhas Solicitações </h2>
+       <hr>
+       {% for posts in posts %}
+       {% if current_user == posts.autor %}
+       <div class="row border mt-4 p-3 pedidos" >
+           <div class="col col-2">
+
+               <div> <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(posts.autor.foto))}}" class="rounded" width="70" > </div>
+               <strong>{{ posts.autor.username}}</strong> <br>
+               Data da Solicitação: <br>
+               {{ posts.datacriacao.strftime('%d/%m/%Y') }}
+
+
+           </div>
+           <div style="font-size:25px" class="col col-6" >
+               <strong> Empreendimento:  </strong>    {{ posts.empreendimento }} <br>
+               <strong>Data de vencimento : </strong>   {{ posts.datavencimento }} <br>
+               <strong>Valor Liquido: </strong>   {{ posts.valorliquido }} <br>
+               <strong>Favorecido : </strong>   {{ posts.favorecido }} <br>
+               <strong>CNPJ:</strong>    {{ posts.cnpj }} <br>
+              <strong> Razão Social: </strong>   {{ posts.razaosocial }} <br>
+               <strong>Orçamento: </strong>   {{ posts.orcamento }} <br>
+               <strong>Pendencia: </strong>   {{ posts.pendencia }} <br>
+               <strong>Serviço:</strong>    {{ posts.servico }} <br>
+               <strong>Mei: </strong> {{ posts.mei}} <br>
+               <strong>Descrição:</strong>  {{ posts.descricao }} <br>
+               <strong>Pagamento: </strong> {{ posts.pagamento }} <br>
+               <strong>NF:</strong>  {{ posts.nf }} <br>
+               <strong>Linha de Planejamento:</strong>  {{ posts.linhaplanejamento }} <br>
+               <strong>Observações: </strong> {{ posts.observacoes }} <br>
+           </div>
+           <div class="col col-4">
+               <img src="{{ url_for('static', filename='Anexos/{}'.format(posts.anexo))}}" class="rounded" width="200" >
+           </div>
+
+       </div>
+       {% endif %}
+       {% endfor %}
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Ativo</a>
+  </li>
+    {% if current_user.setor == "MKT" %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('MKT') }}">Home</a>
+  </li>
+    {% endif %}
+  {% if current_user.setor == "OBRA" %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('OBRA') }}">Home</a>
+  </li>
+    {% endif %}
+  {% if current_user.setor == "Pagamentos" %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('PAGAMENTOS') }}">Home</a>
+  </li>
+    {% endif %}
+  {% if current_user.setor == "ADM" %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('ADM') }}">Home</a>
+  </li>
+    {% endif %}
+  {% if current_user.setor == "Novos" %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('Novos') }}">Home</a>
+  </li>
+    {% endif %}
+  {% if current_user.setor == "Solicitante" %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('Solicitante') }}">Home</a>
+  </li>
+    {% endif %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('solicita') }}">Nova Solicitação</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('Solicitante') }}">Minhas Solicitações</a>
+  </li>
+    {% if current_user.is_authenticated %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('Perfil') }}">Meu perfil</a>
+  </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('sair') }}">Sair</a>
+      </li>
+    </ul>
+
+ {% endif %}

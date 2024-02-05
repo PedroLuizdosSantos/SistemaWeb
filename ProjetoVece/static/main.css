@@ -1,0 +1,68 @@
+body{
+
+    background-color:##FFFFFF;
+    border-radius: 10px;
+
+}
+
+
+.card{
+  width: 500px;
+  border: none;
+  border-radius: 10px;
+
+  background-color: #e1e3e1;
+}
+
+
+
+.stats{
+
+      background: #e1e3e1 !important;
+
+    color: #000 !important;
+}
+.articles{
+  font-size:10px;
+  color: #a1aab9;
+}
+.number1{
+  font-weight:500;
+}
+.followers{
+    font-size:10px;
+  color: #a1aab9;
+
+}
+.number2{
+  font-weight:500;
+}
+.rating{
+    font-size:10px;
+  color: #a1aab9;
+}
+.number3{
+  font-weight:500;
+}
+
+.centro{
+    width: 700px;
+    margin-left: 500px;
+    margin-right: auto;
+    margin-top: 100px
+}
+.pedidos{
+    background:#F2F5F8
+
+}
+.comprovante{
+
+}
+img.teste{
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+
+

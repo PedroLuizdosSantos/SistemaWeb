@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ {% include 'navbar.html' %}
+
+<div class="container mt-3" >
+    <h1> Solicitar novo Pagamento </h1>
+    <hr>
+    <div class="row">
+            <div class="col">
+                <form method="POST"  class="border mt-5 p-4" enctype="multipart/form-data"  >
+                    {{ form_solicita.csrf_token }}
+                    <fieldset>
+                        <div class="form-group">
+                            {{form_solicita.centrodecusto.label(class="form-control-label")}}
+                            {{ form_solicita.centrodecusto(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{ form_solicita.empreendimento.label(class="form-control-label") }}
+                            {{ form_solicita.empreendimento(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_solicita.datavencimento.label(class="form-control-label") }}
+                            {{ form_solicita.datavencimento(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_solicita.valorbruto.label(class="form-control-label") }}
+                            {{ form_solicita.valorbruto(class="form-control") }}
+                        <div class="form-group">
+                            {{ form_solicita.valorliquido.label(class="form-control-label") }}
+                            {{ form_solicita.valorliquido(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{form_solicita.favorecido.label(class="form-control-label")}}
+                            {{ form_solicita.favorecido(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.cnpj.label(class="form-control-label")}}
+                            {{ form_solicita.cnpj(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.razaosocial.label(class="form-control-label")}}
+                            {{ form_solicita.razaosocial(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.orcamento.label(class="form-control-label")}}
+                            {{ form_solicita.orcamento(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.pendencia.label(class="form-control-label")}}
+                            {{ form_solicita.pendencia(class="form-control")}}
+                         </div>
+                            <div class="form-group">
+                            {{ form_solicita.prazo.label(class="form-control-label") }}
+                            {{ form_solicita.prazo(class="form-control") }}
+                        <div class="form-group">
+                            {{form_solicita.servico.label(class="form-control-label")}}
+                            {{ form_solicita.servico(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.mei.label(class="form-control-label")}}
+                            {{ form_solicita.mei(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.descricao.label(class="form-control-label")}}
+                            {{ form_solicita.descricao(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.pagamento.label(class="form-control-label")}}
+                            {{ form_solicita.pagamento(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.nf.label(class="form-control-label")}}
+                            {{ form_solicita.nf(class="form-control")}}
+                         </div>
+                        <div class="form-group">
+                            {{form_solicita.linhaplanejamento.label(class="form-control-label")}}
+                            {{ form_solicita.linhaplanejamento(class="form-control")}}
+                         </div>
+
+
+                        <br>
+                        <div class="form-group">
+                            {{form_solicita.observacoes.label(class="form-control-label")}}
+                            {{ form_solicita.observacoes(class="form-control")}}
+
+                          <div class="contairner   mt-3">  <input class="ok" type="file" name="file" multiple> </div>
+
+
+                    </fieldset>
+                    <div class="contairner   mt-3"> <button class="op">Enviar Formulário</button> </div>
+
+                </form>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
